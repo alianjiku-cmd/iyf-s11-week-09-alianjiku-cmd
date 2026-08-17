@@ -1,17 +1,19 @@
-import PostCard from "./PostCard";
+import useFetch from "../hooks/useFetch";
 
 export default function PostList() {
-  const posts = [
-    { id: 1, title: "Hello React", body: "Learning useEffect and hooks!", author: "Alice" },
-    { id: 2, title: "Advanced Patterns", body: "Exploring routing and styling.", author: "Bob" },
-    { id: 3, title: "CommunityHub", body: "Building a multi-page app.", author: "Charlie" }
-  ];
+  const { data: posts, loading, error } = useFetch("/api/posts");
+
+  if (loading) return <p>Loading posts...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
       <h2>Posts</h2>
       {posts.map(post => (
-        <PostCard key={post.id} post={post} />
+        <div key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+        </div>
       ))}
     </div>
   );
