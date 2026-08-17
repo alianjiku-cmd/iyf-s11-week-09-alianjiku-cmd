@@ -30,6 +30,26 @@ The deliverable is a **Community Hub app** with routing and API integration, sty
   Adds multiple pages (Home, Profile, Settings) using React Router.
 - **Styling (Lesson 18)**  
   Applies Tail wind CSS for responsive design and consistent UI.
+**Folder Structure**
+week-09-react-advanced/
+│
+├── src/
+│   ├── components/
+│   │   ├── Counter.js          # Task 17.1 Exercise 1
+│   │   ├── UserProfile.js      # Task 17.1 Exercise 2 (Pattern 1)
+│   │   ├── WindowSize.js       # Task 17.1 Exercise 2 (Pattern 2)
+│   │   ├── ThemeToggle.js      # Task 17.1 Exercise 2 (Pattern 3)
+│   │   ├── PostList.js         # Task 17.2 Exercise 1
+│   │   └── PostCard.js         # Helper for PostList
+│   │
+│   ├── hooks/
+│   │   └── useFetch.js         # Task 17.2 Exercise 2
+│   │
+│   ├── App.js                  # Swap imports per exercise
+│   └── index.js                # React entry point
+│
+├── README.md                   # Assignment documentation
+└── Package.js
 
 ## How to Run
 1. Clone this repository:
