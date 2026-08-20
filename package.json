@@ -1,0 +1,11 @@
+## Task 18.4: Accessibility Audit
+
+- Initial Lighthouse Accessibility Score: 74
+- After fixes: 96
+
+### Fixes Applied
+- Added labels to all inputs
+- Ensured buttons/links have descriptive text
+- Added alt text to images
+- Improved color contrast to meet AA standards
+- Verified keyboard navigation and visible focus states
