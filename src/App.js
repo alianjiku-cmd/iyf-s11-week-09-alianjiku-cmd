@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
 
@@ -29,12 +30,16 @@ import Settings from "./components/Settings";
 import Modal from "./components/Modal";
 import ContactForm from "./components/ContactForm";
 import "./App.css";
+=======
+import Card from "./components/Card";
+>>>>>>> 6b08a94 (Add Card component styled with Tailwind)
 
 function App() {
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Week 9 React Advanced Assignment</h1>
+      <h1>Lesson 18.2 Styling Demo</h1>
 
+<<<<<<< HEAD
       <section>
         <h2>Counter (useEffect)</h2>
         <Counter />
@@ -75,6 +80,11 @@ function App() {
         <ContactForm />
       </section>
 >>>>>>> 0d1b765a167ec529fe01fc29cc29f04378894d71
+=======
+      <Card title="Tailwind Styled Card">
+        <p>This card uses Tailwind classes like <code>rounded-lg</code> and <code>shadow-md</code>.</p>
+      </Card>
+>>>>>>> 6b08a94 (Add Card component styled with Tailwind)
     </div>
   );
 }
