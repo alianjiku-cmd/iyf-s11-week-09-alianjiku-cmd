@@ -1,13 +1,32 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import LoadingSpinner from "./shared/LoadingSpinner";
+import ErrorMessage from "./shared/ErrorMessage";
 
-export default function WindowSize() {
-  const [size, setSize] = useState(window.innerWidth);
+function WindowSize() {
+  const [size, setSize] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const handleResize = () => setSize(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    try {
+      const updateSize = () => {
+        setSize({ width: window.innerWidth, height: window.innerHeight });
+      };
+      window.addEventListener("resize", updateSize);
+      updateSize();
+      return () => window.removeEventListener("resize", updateSize);
+    } catch (err) {
+      setError("Failed to detect window size");
+    }
   }, []);
 
-  return <h2>Window width: {size}px</h2>;
+  if (!size && !error) return <LoadingSpinner text="Detecting window size..." />;
+  if (error) return <ErrorMessage message={error} />;
+
+  return (
+    <p>
+      Width: {size.width}px, Height: {size.height}px
+    </p>
+  );
 }
+
+export default WindowSize;
